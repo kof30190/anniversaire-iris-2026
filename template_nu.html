@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iris — 1 An — Candillargues 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1c1410;
+    --card: #2a1f18;
+    --text: #f0e6dd;
+    --muted: #b8a594;
+    --accent: #c9825e;
+    --border: #3d3026;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    line-height: 1.7;
+  }
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,130,94,0.08) 0%, transparent 70%);
+  }
+  .hero h1 {
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    position: relative;
+    background: linear-gradient(180deg, var(--text) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero .sub {
+    font-size: 1.3rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.8;
+    position: relative;
+  }
+  .hero .ornament {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 2.5rem auto;
+    position: relative;
+  }
+  .hero .date {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    font-family: 'Inter', sans-serif;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.4;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-family: 'Inter', sans-serif;
+  }
+  .scroll-hint span { width: 1px; height: 40px; background: var(--muted); }
+  .chapter {
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    padding: 0 1.5rem;
+  }
+  .chapter-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    padding-top: 3rem;
+  }
+  .chapter-icon { font-size: 3rem; margin-bottom: 0.75rem; display: block; }
+  .chapter-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .chapter-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+  }
+  .chapter-sub { font-size: 1.05rem; color: var(--muted); font-style: italic; }
+  .chapter-line {
+    width: 50px;
+    height: 1px;
+    background: var(--accent);
+    margin: 1.5rem auto 0;
+    opacity: 0.5;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0 1px var(--accent);
+    border-color: var(--accent);
+  }
+  .card img { width: 100%; height: auto; display: block; transition: filter 0.4s; }
+  .card:hover img { filter: brightness(1.05); }
+  .card-body { padding: 1.3rem 1.5rem 1.5rem; }
+  .card-body p { font-size: 0.95rem; color: var(--muted); font-style: italic; line-height: 1.7; }
+  footer {
+    text-align: center;
+    padding: 5rem 1.5rem 3.5rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+    line-height: 2;
+  }
+  footer .colophon {
+    font-size: 0.65rem;
+    opacity: 0.35;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+  }
+  @media (max-width: 640px) {
+    .gallery { grid-template-columns: 1fr; gap: 2rem; }
+    .chapter { padding: 0 1rem; margin-bottom: 4rem; }
+    .hero { min-height: 90vh; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Iris</h1>
+  <p class="sub">Un an.<br>Une famille.<br>Un dimanche suspendu.</p>
+  <div class="ornament"></div>
+  <p class="date">Candillargues · Mai 2026</p>
+  <div class="scroll-hint"><span></span>Dérouler</div>
+</div>
+
+<!-- CHAPITRE 1: Ouverture (1 photo) -->
+<section class="chapter" id="ouverture">
+  <div class="chapter-header">
+    <span class="chapter-icon">🌿</span>
+    <div class="chapter-num">Chapitre 1</div>
+    <h2 class="chapter-title">Ouverture</h2>
+    <p class="chapter-sub">Avant que tout commence</p>
+    <div class="chapter-line"></div>
+  </div>
+  <div class="gallery">
+    __CARDS_CH1__
+  </div>
+</section>
+
+<!-- CHAPITRE 2: Les Arrivées (5 photos) -->
+<section class="chapter" id="arrivees">
+  <div class="chapter-header">
+    <span class="chapter-icon">👋</span>
+    <div class="chapter-num">Chapitre 2</div>
+    <h2 class="chapter-title">Les Arrivées</h2>
+    <p class="chapter-sub">Les premiers visages</p>
+    <div class="chapter-line"></div>
+  </div>
+  <div class="gallery">
+    __CARDS_CH2__
+  </div>
+</section>
+
+<!-- CHAPITRE 3: Le Repas (12 photos) -->
+<section class="chapter" id="repas">
+  <div class="chapter-header">
+    <span class="chapter-icon">🍽️</span>
+    <div class="chapter-num">Chapitre 3</div>
+    <h2 class="chapter-title">Le Repas</h2>
+    <p class="chapter-sub">À table, en famille</p>
+    <div class="chapter-line"></div>
+  </div>
+  <div class="gallery">
+    __CARDS_CH3__
+  </div>
+</section>
+
+<!-- CHAPITRE 4: Pique-Nique & Détente (13 photos) -->
+<section class="chapter" id="pique-nique">
+  <div class="chapter-header">
+    <span class="chapter-icon">☀️</span>
+    <div class="chapter-num">Chapitre 4</div>
+    <h2 class="chapter-title">Pique-Nique & Détente</h2>
+    <p class="chapter-sub">Tout le monde dans l'herbe</p>
+    <div class="chapter-line"></div>
+  </div>
+  <div class="gallery">
+    __CARDS_CH4__
+  </div>
+</section>
+
+<!-- CHAPITRE 5: Gâteaux & Cadeaux (14 photos) -->
+<section class="chapter" id="gateaux-cadeaux">
+  <div class="chapter-header">
+    <span class="chapter-icon">🎁</span>
+    <div class="chapter-num">Chapitre 5</div>
+    <h2 class="chapter-title">Gâteaux & Cadeaux</h2>
+    <p class="chapter-sub">Le grand moment</p>
+    <div class="chapter-line"></div>
+  </div>
+  <div class="gallery">
+    __CARDS_CH5__
+  </div>
+</section>
+
+<!-- CHAPITRE 6: Balade au Crépuscule (4 photos) -->
+<section class="chapter" id="balade">
+  <div class="chapter-header">
+    <span class="chapter-icon">🌅</span>
+    <div class="chapter-num">Chapitre 6</div>
+    <h2 class="chapter-title">Balade au Crépuscule</h2>
+    <p class="chapter-sub">Derniers instants au bord de l'eau</p>
+    <div class="chapter-line"></div>
+  </div>
+  <div class="gallery">
+    __CARDS_CH6__
+  </div>
+</section>
+
+<footer>
+  <p>Pour Iris,<br>avec tout l'amour de ta tribu.</p>
+  <p class="colophon">Album réalisé par Hermes · Mai 2026</p>
+</footer>
+
+<script>
+  function revealOnScroll() {
+    document.querySelectorAll('.card').forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80) {
+        setTimeout(() => card.style.opacity = '1', i % 4 * 80);
+      }
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+</body>
+</html>
